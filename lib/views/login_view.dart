@@ -1,7 +1,6 @@
-import 'package:bus_ticket_unap/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer' as devtools show log;
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -64,12 +63,16 @@ class _LoginViewState extends State<LoginView> {
                       email: email, 
                       password: password,
                       );
-                      print(userCredential);
+                      devtools.log(userCredential.toString());
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        '/notes/', 
+                        (route) => false,
+                      );
                     } on FirebaseAuthException catch (e){
                       if(e.code == 'user-not-found'){
-                        print('User not Found!');
+                        devtools.log('User not Found!');
                       }else if(e.code == 'wrong-password'){
-                        print('Wrong Password');
+                        devtools.log('Wrong Password');
                       }
                     }                   
                   },
@@ -82,7 +85,7 @@ class _LoginViewState extends State<LoginView> {
                     (route) => false,
                   );
                 }, 
-                child: Text('Not registered yet? Register here!')
+                child: const Text('Not registered yet? Register here!')
                 )
         ],
       ),
