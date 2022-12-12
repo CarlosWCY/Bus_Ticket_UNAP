@@ -1,4 +1,4 @@
-import 'package:bus_ticket_unap/services/auth/auth_user.dart';
+import 'package:bt_unap/services/auth/auth_user.dart';
 
 abstract class AuthProvider {
   AuthUser? get currentUser;

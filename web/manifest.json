@@ -1,6 +1,6 @@
 {
-    "name": "bus_ticket_unap",
-    "short_name": "bus_ticket_unap",
+    "name": "bt_unap",
+    "short_name": "bt_unap",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

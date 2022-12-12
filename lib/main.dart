@@ -1,9 +1,11 @@
-import 'package:bus_ticket_unap/constants/routes.dart';
-import 'package:bus_ticket_unap/firebase_options.dart';
-import 'package:bus_ticket_unap/views/login_view.dart';
-import 'package:bus_ticket_unap/views/register_view.dart';
+import 'package:bt_unap/constants/routes.dart';
+import 'package:bt_unap/controllers/page_controller.dart';
+import 'package:bt_unap/firebase_options.dart';
+import 'package:bt_unap/utilities/consts.dart';
+import 'package:bt_unap/views/login/login_view.dart';
+import 'package:bt_unap/views/login/register_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:bus_ticket_unap/views/verify_email_view.dart';
+import 'package:bt_unap/views/login/verify_email_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as devtools show log;
@@ -16,14 +18,16 @@ void main() {
       title: 'Flutter Demo',
       theme: ThemeData(
               
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
       routes: {
         loginRoute:(context) => const LoginView(),
         registerRoute:(context) => const RegisterView(),
         verifyEmailRoute:(context) => const VerifyEmailView(),
         notesRoute:(context) => const NotesView(),
+        controllerRoute:(context) => PagesController(),
       },
     )
   );
@@ -44,7 +48,7 @@ class HomePage extends StatelessWidget {
               final user = FirebaseAuth.instance.currentUser;
               if(user != null){
                 if(user.emailVerified){
-                  return const NotesView();
+                  return PagesController();
                 }else{
                   return const VerifyEmailView();
                 }
@@ -75,7 +79,7 @@ class _NotesViewState extends State<NotesView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar( 
-        title: const Text('Main UI'),
+        title: const Text('Menú Principal'),
         actions: [
           PopupMenuButton(
             onSelected: (value) async{

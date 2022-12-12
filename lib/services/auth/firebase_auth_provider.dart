@@ -1,6 +1,6 @@
-import 'package:bus_ticket_unap/services/auth/auth_exceptions.dart';
-import 'package:bus_ticket_unap/services/auth/auth_provider.dart';
-import 'package:bus_ticket_unap/services/auth/auth_user.dart';
+import 'package:bt_unap/services/auth/auth_exceptions.dart';
+import 'package:bt_unap/services/auth/auth_provider.dart';
+import 'package:bt_unap/services/auth/auth_user.dart';
 
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth, FirebaseAuthException;
 

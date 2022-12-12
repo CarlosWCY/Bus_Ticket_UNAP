@@ -1,4 +1,4 @@
-name: bus_ticket_unap
+name: bt_unap
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -38,6 +38,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.1.3
+  delayed_display: ^2.0.0
+  firebase_database: ^10.0.7
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,20 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/logo/
+    - assets/images/companies_logo/
+    - assets/images/seats/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraLight.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Light.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
+    - family: Barcode
+      fonts:
+        - asset: assets/fonts/Libre_Barcode_128/LibreBarcode128-Regular.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,5 +1,5 @@
-import 'package:bus_ticket_unap/services/auth/auth_provider.dart';
-import 'package:bus_ticket_unap/services/auth/auth_user.dart';
+import 'package:bt_unap/services/auth/auth_provider.dart';
+import 'package:bt_unap/services/auth/auth_user.dart';
 
 class AuthService implements AuthProvider{
   final AuthProvider  provider;

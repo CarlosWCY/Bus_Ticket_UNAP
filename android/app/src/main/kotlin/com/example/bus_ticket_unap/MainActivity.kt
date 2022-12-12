@@ -1,4 +1,4 @@
-package com.example.bus_ticket_unap
+package com.example.bt_unap
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bus_ticket_unap">
+    package="com.example.bt_unap">
    <application
-        android:label="bus_ticket_unap"
+        android:label="bt_unap"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
